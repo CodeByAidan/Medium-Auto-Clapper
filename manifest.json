@@ -1,0 +1,27 @@
+{
+	"manifest_version": 3,
+	"name": "Medium Auto-Clapper",
+	"description": "This extension will allow you to give 50 claps to any medium article with only one clap from your end",
+	"version": "1.0",
+	"icons": {
+		"16": "clap16.png",
+		"48": "clap48.png",
+		"128": "clap128.png"
+	},
+	"action": {
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*.medium.com/*"],
+			"js": ["clap.js"]
+		}
+	],
+	"permissions": ["scripting", "activeTab"],
+	"web_accessible_resources": [
+		{
+			"resources": ["src/clap.ts", "src/popup.ts"],
+			"matches": ["*://*.medium.com/*"]
+		}
+	]
+}

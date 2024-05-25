@@ -1,0 +1,26 @@
+{
+	"name": "medium-auto-clap-google-extension",
+	"version": "1.0.0",
+	"description": "This extension will allow you to give 50 claps to any medium article with only one clap from your end",
+	"main": "popup.js",
+	"scripts": {
+		"build": "npx tsc",
+		"watch": "npx tsc --watch"
+	},
+	"keywords": [
+		"medium",
+		"auto",
+		"clap",
+		"google",
+		"extension"
+	],
+	"author": "CodeByAidan",
+	"license": "MIT",
+	"dependencies": {
+		"ts-loader": "^9.5.1",
+		"typescript": "^5.4.5"
+	},
+	"devDependencies": {
+		"prettier": "^3.2.5"
+	}
+}
