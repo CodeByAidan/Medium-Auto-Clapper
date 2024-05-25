@@ -16,9 +16,12 @@ document.addEventListener("click", ({ target }: MouseEvent) => {
                 return;
             }
 
-            svg.style.fill = "green";
-            svg.style.stroke = "green";
-
+			/**
+			 * Triggers a mouse event on the specified SVG element.
+			 * This function simulates a mouse event on the provided SVG element with customizable event type.
+			 * @param {SVGSVGElement} node - The SVG element on which the mouse event will be triggered.
+			 * @param {string} eventType - The type of mouse event to trigger (e.g., "click", "mousedown").
+			 */
             const triggerMouseEvent = (
                 node: SVGSVGElement,
                 eventType: string,
@@ -45,9 +48,6 @@ document.addEventListener("click", ({ target }: MouseEvent) => {
 					counter++;
 				}
 			}, 20);
-
-            svg.style.fill = "rgb(117, 117, 117)"; // Reset the color
-            svg.style.stroke = "";
         }
     } catch (error) {
         console.error(`[Medium Auto-Clapper] Error: ${error}`);
