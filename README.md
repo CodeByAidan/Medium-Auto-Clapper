@@ -1,5 +1,7 @@
 # Medium Auto-Clapper
 
+![demo.gif](./assets/demo.gif "Demo of the extension in action")
+
 ## Table of Contents
 
 - [Medium Auto-Clapper](#medium-auto-clapper)
