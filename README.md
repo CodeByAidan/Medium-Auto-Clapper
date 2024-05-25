@@ -29,7 +29,7 @@ I got bored of clapping on Medium articles and getting Carpal Tunnel Syndrome, s
 1. Clone the repository
 
 ```bash
-git clone ...
+git clone https://github.com/CodeByAidan/Medium-Auto-Clapper
 ```
 
 2. Download the dependencies
