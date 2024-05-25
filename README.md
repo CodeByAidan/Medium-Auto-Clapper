@@ -2,12 +2,12 @@
 
 ## Table of Contents
 
--   [Medium Auto-Clapper](#medium-auto-clapper)
-    -   [Table of Contents](#table-of-contents)
-    -   [About ](#about-)
-        -   [Installing](#installing)
-        -   [Development](#development)
-    -   [Usage ](#usage-)
+- [Medium Auto-Clapper](#medium-auto-clapper)
+  - [Table of Contents](#table-of-contents)
+  - [About ](#about-)
+    - [Installing](#installing)
+    - [Development](#development)
+  - [Usage ](#usage-)
 
 ## About <a name = "about"></a>
 
@@ -29,7 +29,7 @@ I got bored of clapping on Medium articles and getting Carpal Tunnel Syndrome, s
 1. Clone the repository
 
 ```bash
-git clone ...
+git clone https://github.com/CodeByAidan/Medium-Auto-Clapper
 ```
 
 2. Download the dependencies

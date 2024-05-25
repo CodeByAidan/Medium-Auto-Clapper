@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "This extension will allow you to give 50 claps to any medium article with only one clap from your end",
 	"main": "popup.js",
+	"repository": {"directory": "Medium-Auto-Clapper","type": "git","url": "https://github.com/CodeByAidan/Medium-Auto-Clapper"},
 	"scripts": {
 		"build": "npx tsc",
 		"watch": "npx tsc --watch"

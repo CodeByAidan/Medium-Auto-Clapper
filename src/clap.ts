@@ -1,57 +1,55 @@
 document.addEventListener("click", ({ target }: MouseEvent) => {
-	try {
-		const svg = (target as HTMLElement).firstElementChild as SVGSVGElement;
+    try {
+        const svg = (target as HTMLElement).firstElementChild as SVGSVGElement;
 
-		if (svg?.getAttribute("aria-label")) {
+        if (svg?.getAttribute("aria-label")) {
 			let counter = 1;
-			let timer: NodeJS.Timeout;
+			let timer: number;
 
-			let parent: any = svg;
-			for (let i = 0; i < 5 && parent.parentNode; i++) {
-				parent = parent.parentNode;
-			}
+            let parent: any = svg;
+            for (let i = 0; i < 5 && parent.parentNode; i++) {
+                parent = parent.parentNode;
+            }
 
-			const clapLabelDiv = parent.querySelector("div");
-			if (clapLabelDiv?.textContent?.trim() === "+50") {
-				return;
-			}
+            const clapLabelDiv = parent.querySelector("div");
+            if (clapLabelDiv?.textContent?.trim() === "+50") {
+                return;
+            }
 
-			svg.style.fill = "green";
-			svg.style.stroke = "green";
+            svg.style.fill = "green";
+            svg.style.stroke = "green";
 
-			/**
-			 * Triggers a mouse event on the specified SVG element.
-			 * This function simulates a mouse event on the provided SVG element with customizable event type.
-			 * @param {SVGSVGElement} node - The SVG element on which the mouse event will be triggered.
-			 * @param {string} eventType - The type of mouse event to trigger (e.g., "click", "mousedown").
-			 */
-			const triggerMouseEvent = (
-				node: SVGSVGElement,
-				eventType: string,
-			) => {
-				if (counter > 100) {
-					clearInterval(timer);
-				}
+            const triggerMouseEvent = (
+                node: SVGSVGElement,
+                eventType: string,
+            ) => {
+                if (clapLabelDiv?.textContent?.trim() === "+50") {
+                    return;
+                }
 
-				const clickEvent = new MouseEvent(eventType, {
-					bubbles: true,
-					cancelable: true,
-				});
+                const clickEvent = new MouseEvent(eventType, {
+                    bubbles: true,
+                    cancelable: true,
+                });
 
-				node.dispatchEvent(clickEvent);
-				counter++;
-			};
+                node.dispatchEvent(clickEvent);
+            };
 
 			timer = setInterval(() => {
-				["mousedown", "mouseup"].forEach((eventType) =>
-					triggerMouseEvent(svg, eventType),
-				);
-			}, 10);
+				if (counter > 50) {
+					clearInterval(timer);
+				} else {
+					["mousedown", "mouseup"].forEach((eventType) =>
+						triggerMouseEvent(svg, eventType),
+					);
+					counter++;
+				}
+			}, 20);
 
-			svg.style.fill = "rgb(117, 117, 117)"; // Reset the color
-			svg.style.stroke = "";
-		}
-	} catch (error) {
-		console.error(`[Medium Auto-Clapper] Error: ${error}`);
-	}
+            svg.style.fill = "rgb(117, 117, 117)"; // Reset the color
+            svg.style.stroke = "";
+        }
+    } catch (error) {
+        console.error(`[Medium Auto-Clapper] Error: ${error}`);
+    }
 });
